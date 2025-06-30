@@ -867,20 +867,20 @@ img {
     .contact-section .container {
         flex-direction: column;
     }
-    
+
     .about-image,
     .gastronomy-slider {
         margin-top: 30px;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .carousel-caption h1 {
         font-size: 2.5rem;
     }
-    
+
     .carousel-caption p {
         font-size: 1.2rem;
     }
@@ -900,41 +900,41 @@ img {
         transition: all 0.5s ease;
         z-index: 999;
     }
-    
+
     .nav-menu.active {
         left: 0;
     }
-    
+
     .nav-menu ul {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .nav-menu li {
         margin: 15px 0;
     }
-    
+
     .mobile-menu {
         display: block;
     }
-    
+
     .carousel {
         height: 70vh;
     }
-    
+
     .carousel-caption h1 {
         font-size: 2rem;
     }
-    
+
     .carousel-caption p {
         font-size: 1rem;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .cta-buttons .btn,
     .cta-buttons .btn-secondary {
         width: 100%;
@@ -946,30 +946,108 @@ img {
     .header .container {
         height: 70px;
     }
-    
+
     .logo img {
         height: 30px;
     }
-    
+
     .carousel {
         height: 60vh;
         min-height: 400px;
     }
-    
+
     .carousel-caption h1 {
         font-size: 1.8rem;
     }
-    
+
     .section-title {
         font-size: 1.8rem;
     }
-    
+
     .about-stats {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         gap: 10px;
     }
+}
+/* Perguntas do quiz com itálico, por exemplo */
+.quiz-question {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  margin: 1em 0 0.5em;
+}
+
+#quizBtn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: transform 0.2s;
+}
+
+#quizBtn:hover {
+  transform: scale(1.1);
+}
+
+.swal2-popup {
+  width: auto !important;
+  max-width: 90% !important;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* deixa os botões do SweetAlert2 verticais e 100% de largura */
+.swal2-html-container button[data-val] {
+  display: block;
+  width: 100%;
+  margin: 0.5em 0;
+  padding: 0.75em;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25em;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.swal2-html-container button[data-val]:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 360px) {
+  #quizBtn {
+    width: 50px;
+    height: 50px;
+    bottom: 12px;
+    right: 12px;
+    font-size: 1.2rem;
+  }
+}
+
+/* um pouco maior em tablets portrait */
+@media (min-width: 361px) and (max-width: 767px) {
+  #quizBtn {
+    width: 55px;
+    height: 55px;
+    bottom: 16px;
+    right: 16px;
+    font-size: 1.3rem;
+  }
 }
