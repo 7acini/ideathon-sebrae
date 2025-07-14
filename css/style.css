@@ -159,7 +159,7 @@ img {
 }
 
 .logo img {
-    height: 40px;
+    height: 80px;
     margin-right: 10px;
 }
 
@@ -545,6 +545,7 @@ img {
 }
 
 .gastronomy-slider {
+    height: 22em;
     flex: 1;
     border-radius: 10px;
     overflow: hidden;
@@ -948,7 +949,7 @@ img {
     }
 
     .logo img {
-        height: 30px;
+        height: 70px;
     }
 
     .carousel {
@@ -981,30 +982,67 @@ img {
   margin: 1em 0 0.5em;
 }
 
+/* Define a animação de “flutuar” */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* sobe 5px no meio da animação */
+  }
+}
+
 #quizBtn {
+  /* tipografia (pode manter ou remover, pois a imagem vai cobrir o texto) */
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
+  font-size: 1.5rem;
+  color: transparent;        /* esconde o texto caso ainda exista */
+  
+  /* posição e tamanho */
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
+  padding: 0;                /* zera espaçamentos internos */
+  
+  /* estilo de botão circular */
   border: none;
   border-radius: 50%;
-  background-color: #007bff;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  overflow: hidden;          /* “corta” a imagem fora do círculo */
+  background-color: #007bff; /* cor de fundo se a imagem falhar */
+  
+  /* layout interno */
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  /* interação */
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   z-index: 1000;
   transition: transform 0.2s;
+
+  /* remove a transição de transform se quiser que a animação seja uniforme */
+  transition: none;
+
+  /* adiciona a animação de float */
+  animation: float 3s ease-in-out infinite;
+}
+
+#quizBtn img {
+  width: 100%;               /* preenche todo o círculo */
+  height: 100%;
+  object-fit: cover;         /* escala e recorta para cobrir sem distorcer */
+  display: block;            /* remove espaços inline indesejados */
+  pointer-events: none;      /* cliques passam pelo <img> direto no botão */
 }
 
 #quizBtn:hover {
   transform: scale(1.1);
+  animation-play-state: paused;
+  transform: scale(1.05);
 }
 
 .swal2-popup {
@@ -1033,8 +1071,8 @@ img {
 
 @media (max-width: 360px) {
   #quizBtn {
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     bottom: 12px;
     right: 12px;
     font-size: 1.2rem;
@@ -1044,8 +1082,8 @@ img {
 /* um pouco maior em tablets portrait */
 @media (min-width: 361px) and (max-width: 767px) {
   #quizBtn {
-    width: 55px;
-    height: 55px;
+    width: 75px;
+    height: 75px;
     bottom: 16px;
     right: 16px;
     font-size: 1.3rem;
