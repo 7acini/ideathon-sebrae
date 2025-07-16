@@ -1089,3 +1089,40 @@ img {
     font-size: 1.3rem;
   }
 }
+
+/*Aba de emergencia*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+  }
+  .botao-emergencia {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+  }
+  .botao-emergencia:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .icone {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .bombeiros { border-color: #e74c3c; color: #e74c3c; }
+  .hospital { border-color: #3498db; color: #3498db; }
+  .upa { border-color: #f1c40f; color: #f1c40f; }
+  .policia { border-color: #2ecc71; color: #2ecc71; }
+  .samu { border-color: #9b59b6; color: #9b59b6; }
+  .defesa-civil { border-color: #e67e22; color: #e67e22; }
+  .cvv { border-color: #34495e; color: #34495e; }
