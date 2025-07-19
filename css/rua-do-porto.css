@@ -1,0 +1,181 @@
+/* css/rua-do-porto.css */
+
+/* ===== Fonte padrão ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background: #f9f9f9;
+}
+
+/* ===== Hero ===== */
+.hero-porto {
+  background: url('../images/rua-porto.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hero-porto::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  color: #F26800;
+  margin-bottom: 0.5rem;
+}
+.hero-content p {
+  font-size: 1.25rem;
+}
+
+/* ===== Títulos ===== */
+.title-blue {
+  color: #1E6C93;
+  margin-bottom: 0.5rem;
+}
+.title-orange {
+  color: #F26800;
+  margin-bottom: 0.5rem;
+}
+.title-white {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Container e seções ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+section {
+  margin-bottom: 2rem;
+}
+
+/* ===== Overview ===== */
+.overview p {
+  line-height: 1.6;
+}
+
+/* ===== Highlights ===== */
+.grid-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.grid-icons li {
+  text-align: center;
+}
+.grid-icons li i {
+  font-size: 2rem;
+  color: #F26800;
+  margin-bottom: 0.5rem;
+}
+.grid-icons li span {
+  display: block;
+  font-size: 1rem;
+}
+
+/* ===== Gastronomy & Leisure ===== */
+.gastronomy p,
+.leisure p {
+  line-height: 1.6;
+}
+
+/* ===== Accessibility ===== */
+.bg-gradient {
+  background: linear-gradient(135deg, #F26800, #1E6C93);
+  color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+}
+.accessibility ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.accessibility li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.accessibility li::before {
+  content: "\f058";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+}
+.accessibility p {
+  margin-top: 1rem;
+}
+
+/* ===== Howto, Parking, Restaurants ===== */
+.howto p,
+.parking p {
+  line-height: 1.6;
+}
+.restaurants ul {
+  list-style: disc inside;
+  margin: 1rem 0;
+}
+.restaurants p {
+  line-height: 1.6;
+}
+
+/* ===== Itinerary ===== */
+.itinerary-step {
+  margin-bottom: 1.5rem;
+}
+.itinerary-step h3 {
+  font-size: 1.25rem;
+  color: #1E6C93;
+  margin-bottom: 0.5rem;
+}
+.itinerary-step ul {
+  list-style: disc inside;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+/* ===== Footer ===== */
+.footer-porto {
+  background: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+.footer-porto a.btn-secondary {
+  background: #1E6C93;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  border-color: transparent;
+}
+.footer-porto p {
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2.25rem; }
+  .hero-content p { font-size: 1rem; }
+  .grid-icons { grid-template-columns: 1fr; }
+  .container { padding: 1rem; }
+}
