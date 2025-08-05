@@ -1,0 +1,184 @@
+/* =========================
+   Fonte padrão
+   ========================= */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   Cores de títulos
+   ========================= */
+.title-orange { color: #F26800; }
+.title-blue   { color: #1E6C93; }
+.title-white  { color: #fff; }
+
+/* =========================
+   Hero
+   ========================= */
+.hero-engente {
+  background: url('../images/engenho-central.jpg') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 12vh;
+}
+.hero-engente::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.hero-content {
+  position: relative;
+  text-align: center;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  color: #F26800;
+}
+.hero-content p {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+/* =========================
+   Container e seções
+   ========================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+section {
+  padding: 3rem 0;
+}
+
+/* Backgrounds auxiliares */
+.bg-light {
+  background: #f9f9f9;
+}
+.bg-gradient {
+  background: linear-gradient(135deg, #F26800, #1E6C93);
+  color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+}
+
+/* Flex split */
+.split {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.split .text {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* =========================
+   Gallery
+   ========================= */
+.grid-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.grid-photos img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* =========================
+   Grid de ícones (Highlights)
+   ========================= */
+.grid-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.grid-icons li {
+  text-align: center;
+}
+.grid-icons li i {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #F26800;
+}
+
+/* =========================
+   Sessões específicas
+   ========================= */
+/* Sessão de acessibilidade */
+.sessao-acessibilidade,
+.accessibility {
+  padding: 1em !important;
+}
+.accessibility ul {
+  list-style: none;
+  padding: 0;
+}
+.accessibility li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.accessibility li::before {
+  content: "\f058";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #fff;
+}
+
+/* Itinerário */
+.itinerary-step {
+  margin-bottom: 2rem;
+}
+.itinerary-step h3 {
+  font-size: 1.5rem;
+  color: #1E6C93;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer-engenho {
+  background:#fff; text-align:center;
+  padding:2rem 1rem; border-top:1px solid #e0e0e0;
+}
+.footer-engenho a.btn-secondary {
+  background:#1E6C93; color:#fff;
+  padding:0.75rem 1.5rem; border-radius:4px;
+  text-decoration:none;
+  border-color: transparent;
+}
+.footer-engenho p { margin-top:1rem; color:#666; }
+
+/* =========================
+   Responsividade
+   ========================= */
+@media (max-width: 768px) {
+  .split {
+    flex-direction: column;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .hero-engente {
+    margin-top: 10vh;
+  }
+  .grid-icons {
+    grid-template-columns: 1fr;
+  }
+}

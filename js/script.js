@@ -235,7 +235,7 @@ const locaisPiracicaba = {
   }
 };
 
-async function getRecomendacaoIA(categoria, escolha, preferencias = {}) {
+async function getRecomendacaoIA(categoria, escolha = {}) {
   let opcoes = locaisPiracicaba[categoria]?.[escolha] || [];
 
   if (opcoes.length === 0) {
@@ -243,19 +243,6 @@ async function getRecomendacaoIA(categoria, escolha, preferencias = {}) {
       nome: "Nenhuma recomendação disponível",
       descricao: "Desculpe, não encontramos opções para esta categoria"
     };
-  }
-
-  if (preferencias.orcamento === 'baixo') {
-    opcoes = opcoes.filter(opcao => opcao.preco === '$' || !opcao.preco);
-  } else if (preferencias.orcamento === 'alto') {
-    opcoes = opcoes.filter(opcao => opcao.preco === '$$$');
-  }
-
-  if (preferencias.tempo === 'pouco') {
-    opcoes = opcoes.filter(opcao =>
-      !opcao.descricao.includes("passeio") &&
-      !opcao.descricao.includes("tour")
-    );
   }
 
   opcoes.sort((a, b) => b.rating - a.rating);
@@ -279,58 +266,7 @@ async function showResultado(categoria, escolha) {
     economico: 'Acomodações econômicas'
   };
 
-  const { value: preferencias } = await Swal.fire({
-    title: 'Personalize sua experiência:',
-    html: `
-      <div class="preference-group">
-        <label for="orcamento">Orçamento:</label>
-        <select id="orcamento" class="swal2-select">
-          <option value="">Qualquer</option>
-          <option value="baixo">Econômico</option>
-          <option value="medio">Médio</option>
-          <option value="alto">Alto</option>
-        </select>
-      </div>
-      <div class="preference-group">
-        <label for="tempo">Tempo disponível:</label>
-        <select id="tempo" class="swal2-select">
-          <option value="">Qualquer</option>
-          <option value="pouco">Pouco (até 2h)</option>
-          <option value="medio">Médio (meio dia)</option>
-          <option value="muito">Muito (dia todo)</option>
-        </select>
-      </div>
-      <style>
-        .preference-group {
-          margin: 10px 0;
-        }
-        .preference-group label {
-          display: block;
-          margin-bottom: 5px;
-          text-align: left;
-          font-weight: bold;
-        }
-        .swal2-select {
-          width: 100%;
-          padding: 8px;
-          border-radius: 4px;
-          border: 1px solid #ddd;
-        }
-      </style>
-    `,
-    focusConfirm: false,
-    showCancelButton: true,
-    confirmButtonText: 'Obter recomendação',
-    cancelButtonText: 'Pular personalização',
-    preConfirm: () => {
-      return {
-        orcamento: document.getElementById('orcamento').value,
-        tempo: document.getElementById('tempo').value
-      };
-    }
-  });
-
-  const recomendacao = await getRecomendacaoIA(categoria, escolha, preferencias || {});
+  const recomendacao = await getRecomendacaoIA(categoria, escolha || {});
 
   const resultado = await Swal.fire({
     title: `✨ ${recomendacao.nome}`,
@@ -340,14 +276,6 @@ async function showResultado(categoria, escolha) {
         <p>${recomendacao.descricao}</p>
         ${recomendacao.rating ? `<p><strong>Avaliação:</strong> ${recomendacao.rating}/5.0</p>` : ''}
         ${recomendacao.preco ? `<p><strong>Faixa de preço:</strong> ${recomendacao.preco}</p>` : ''}
-        ${preferencias ? `
-          <p class="preferences-used">
-            <small>Preferências aplicadas: ${[
-              preferencias.orcamento ? `Orçamento ${preferencias.orcamento}` : '',
-              preferencias.tempo ? `Tempo ${preferencias.tempo}` : ''
-            ].filter(Boolean).join(', ')}</small>
-          </p>
-        ` : ''}
       </div>
       <style>
         .preferences-used {
@@ -367,7 +295,7 @@ async function showResultado(categoria, escolha) {
   if (resultado.isConfirmed) {
     window.open(`https://www.google.com/maps/search/${encodeURIComponent(recomendacao.nome + ' Piracicaba')}`);
   } else if (resultado.isDenied) {
-    showTodasOpcoes(categoria, escolha, preferencias);
+    showTodasOpcoes(categoria, escolha);
   }
 
   document.getElementById('feedback-link')?.addEventListener('click', (e) => {
@@ -376,21 +304,8 @@ async function showResultado(categoria, escolha) {
   });
 }
 
-function showTodasOpcoes(categoria, escolha, preferencias = {}) {
+function showTodasOpcoes(categoria, escolha = {}) {
   let opcoes = locaisPiracicaba[categoria]?.[escolha] || [];
-
-  if (preferencias.orcamento === 'baixo') {
-    opcoes = opcoes.filter(opcao => opcao.preco === '$' || !opcao.preco);
-  } else if (preferencias.orcamento === 'alto') {
-    opcoes = opcoes.filter(opcao => opcao.preco === '$$$');
-  }
-
-  if (preferencias.tempo === 'pouco') {
-    opcoes = opcoes.filter(opcao =>
-      !opcao.descricao.includes("passeio") &&
-      !opcao.descricao.includes("tour")
-    );
-  }
 
   opcoes.sort((a, b) => b.rating - a.rating);
 

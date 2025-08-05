@@ -1,0 +1,83 @@
+.attractions-carousel {
+  position: relative;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 25%; /* 4 cards por tela */
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+.carousel-control i {
+  font-size: 1rem;
+  color: #333;
+}
+
+.attraction-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform .3s;
+}
+
+.attraction-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ajuste de padding interno dos cards */
+.attraction-card img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+.card-content {
+  padding: 1rem;
+}
+
+/* Responsividade: 1 card por vez em dispositivos móveis */
+@media (max-width: 767px) {
+  .carousel-slide {
+    min-width: 100% !important;
+    /* opcional: remover padding lateral para usar toda a largura */
+    padding: 0;
+  }
+
+  /* opcional: ajustar tamanho dos controles para toque */
+  .carousel-control {
+    width: 50px;
+    height: 50px;
+  }
+}
