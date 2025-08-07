@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx1Z_bmNY3UePQ4I5__nTZh1Za7AyB5bs&libraries=places&callback=AbrirMapa"></script>
+    <link rel="icon" href="images/Capivara-Mascote.jpeg" type="image/x-icon">
+ 
 </head>
 <body>
     <header class="header">
@@ -44,51 +47,45 @@
          <div class="container">
             <h1>Serviços de Emergência próximos a você!</h1>
                  <div class="grid">
+                    <div class="botao-emergencia hospital" onclick="AbrirMapa('hospitais perto de mim')">
+                        <div class="icone">🏥</div>
+                            <strong>Hospitais</strong><br>
+                            <small>Ver no mapa</small>
+                        </div>
+
+                    <div class="botao-emergencia upa" onclick="AbrirMapa('UPA, Pronto socorro perto de mim')">
+                        <div class="icone">🩺</div>
+                            <strong>UPA / Pronto socorro</strong><br>
+                            <small>Ver no mapa</small>
+                    </div>
+
                     <div class="botao-emergencia bombeiros" onclick="ligar('193')">
                         <div class="icone">🚒</div>
                             <strong>Bombeiros</strong><br>
                             <small>Ligar: 193</small>                        
-                    </div>
-
-                    <div class="botao-emergencia hospital" onclick="abrirMapa('hospitais perto de mim')">
-                    <div class="icone">🏥</div>
-                    <strong>Hospitais</strong><br>
-                    <small>Ver no mapa</small>
-                    </div>
-
-                    <div class="botao-emergencia upa" onclick="abrirMapa('UPA perto de mim')">
-                    <div class="icone">🩺</div>
-                    <strong>UPA</strong><br>
-                    <small>Ver no mapa</small>
-                    </div>
+                        </div>
 
                     <div class="botao-emergencia policia" onclick="ligar('190')">
-                    <div class="icone">🚓</div>
-                    <strong>Polícia</strong><br>
-                    <small>Ligar: 190</small>
+                        <div class="icone">🚓</div>
+                            <strong>Polícia</strong><br>
+                            <small>Ligar: 190</small>
                     </div>
 
                     <div class="botao-emergencia samu" onclick="ligar('192')">
-                    <div class="icone">🚑</div>
-                    <strong>SAMU</strong><br>
-                    <small>Ligar: 192</small>
+                        <div class="icone">🚑</div>
+                            <strong>SAMU</strong><br>
+                            <small>Ligar: 192</small>
                     </div>
 
                     <div class="botao-emergencia defesa-civil" onclick="ligar('199')">
-                    <div class="icone">⚠️</div>
-                    <strong>Defesa Civil</strong><br>
-                    <small>Ligar: 199</small>
-                    </div>
-
-                    <div class="botao-emergencia cvv" onclick="ligar('188')">
-                    <div class="icone">🧠</div>
-                    <strong>CVV (Prevenção ao Suicídio)</strong><br>
-                    <small>Ligar: 188</small>
+                        <div class="icone">⚠️</div>
+                            <strong>Defesa Civil</strong><br>
+                            <small>Ligar: 199</small>
                     </div>
                 </div>
          </div>
-    </section>
 
+    </section>
     
 
     <section class="contact-section" id="contato">
@@ -185,6 +182,7 @@
     <script src="js/carousel.js"></script>
     <script src="js/script.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/pontosInteresse.js"></script>
 
     <div id="modalContainer"></div>
 </body>
