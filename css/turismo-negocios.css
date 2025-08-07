@@ -1,0 +1,97 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0; padding: 0;
+  background: #f9f9f9; color: #333;
+}
+
+/* Hero */
+.hero-negocios {
+  background: url('../images/turismo-negocios.jpg') center/cover no-repeat;
+  height: 60vh; display: flex;
+  align-items: center; justify-content: center;
+  position: relative;
+}
+.hero-negocios::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.hero-negocios .hero-content {
+  position: relative;
+  text-align: center;
+}
+.hero-negocios .hero-content h1 {
+  font-size: 3rem; color: #1E6C93;
+  margin-bottom: 0.5rem;
+}
+.hero-negocios .hero-content p {
+  font-size: 1.25rem; color: #fff;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+section {
+  margin-bottom: 2rem;
+}
+
+/* Titles */
+.title-blue {
+  color: #1E6C93;
+  margin-bottom: 0.5rem;
+}
+.title-orange {
+  color: #F26800;
+  margin-bottom: 0.5rem;
+}
+
+/* Lists */
+ul {
+  list-style: disc inside;
+  margin: 1rem 0;
+  padding: 0;
+}
+li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Section background */
+.bg-light {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer-monte {
+  background: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+.footer-monte a.btn-secondary {
+  background: #1E6C93;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  border-color: transparent;
+}
+.footer-monte p {
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-negocios .hero-content h1 {
+    font-size: 2.25rem;
+  }
+  .hero-negocios .hero-content p {
+    font-size: 1rem;
+  }
+}

@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/carrossel-pontos-turisticos.css">
 </head>
 <body>
     <header class="header">
@@ -44,7 +46,7 @@
         <div class="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/banner1.jpg" alt="Vista do Rio Piracicaba">
+                    <img src="images/Cidade/PanoramicaEngenho.jpeg" alt="Vista do Rio Piracicaba">
                     <div class="carousel-caption">
                         <h1>Bem-vindo a Piracicaba</h1>
                         <p>A cidade mais doce do Brasil</p>
@@ -52,7 +54,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner2.jpg" alt="Engenho Central">
+                    <img src="images/Cidade/RuaDoPorto.jpeg" alt="Engenho Central">
                     <div class="carousel-caption">
                         <h1>Patrimônio Histórico</h1>
                         <p>Conheça o Engenho Central e nossa rica cultura</p>
@@ -60,7 +62,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner3.jpg" alt="Salto de Piracicaba">
+                    <img src="images/Cidade/CasaDoPovoador.jpeg" alt="Salto de Piracicaba">
                     <div class="carousel-caption">
                         <h1>Natureza Deslumbrante</h1>
                         <p>Descubra as belezas naturais de Piracicaba</p>
@@ -68,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <button class="carousel-control prev" type="button" aria-label="Anterior">
+            <button class="carousel-control prev" type="button" type="button" aria-label="Anterior">
                 <i class="fas fa-chevron-left" aria-hidden="true"></i>
             </button>
             <button class="carousel-control next" type="button" aria-label="Próximo">
@@ -107,7 +109,7 @@
                 </div>
             </div>
             <div class="about-image">
-                <img src="images/vista-aerea.jpg" alt="Vista aérea de Piracicaba">
+                <img src="images/Cidade/RioCheio.jpeg" alt="Vista aérea de Piracicaba">
             </div>
         </div>
     </section>
@@ -115,45 +117,107 @@
     <section class="attractions-section" id="pontos-turisticos">
         <div class="container">
             <h2 class="section-title">Principais Pontos Turísticos</h2>
-            <div class="attractions-grid">
-                <div class="attraction-card">
-                    <img src="images/engenho-central.jpg" alt="Engenho Central">
-                    <div class="card-content">
-                        <h3>Engenho Central</h3>
-                        <p>O Engenho Central é um dos pontos turísticos mais marcantes da cidade, com uma arquitetura industrial do século XIX que mistura história, cultura e lazer em um só lugar.</p>
-                        <a href="#" class="btn-secondary">Saiba mais</a>
-                    </div>
+            
+            <div class="attractions-carousel">
+                <button class="carousel-control prev" id="btn-pontos-turisticos-previus" aria-label="Anterior">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+              
+                <div class="carousel-track-container">
+                    <ul class="carousel-track" style="margin-bottom: 2em;">
+                        <li class="carousel-slide">
+                          <div class="attraction-card">
+                            <img src="images/Cidade/PanoramicaEngenhoRetro.jpeg" alt="Engenho Central">
+                                <div class="card-content">
+                                    <h3>Engenho Central</h3>
+                                    <p>O Engenho Central é um dos pontos turísticos mais... </p>
+                                    <a href="engenho-central.html" target="_blank" class="btn-secondary">Saiba mais</a>
+                                </div>
+                          </div>
+                        </li>
+                        <li class="carousel-slide">
+                          <div class="attraction-card">
+                                <img src="images/capela-monte-alegre.jpg" alt="Capela São Pedro">
+                                <div class="card-content">
+                                    <h3>Capela São Pedro</h3>
+                                    <p>A Capela São Pedro é um edifício religioso... </p>
+                                    <a href="monte-alegre.html" target="_blank" class="btn-secondary">Saiba mais</a>
+                                </div>
+                          </div>
+                        </li>
+                        <li class="carousel-slide">
+                          <div class="attraction-card">
+                                <img src="images/rua-porto.jpg" alt="Rua do Porto">
+                                <div class="card-content">
+                                    <h3>Rua do Porto</h3>
+                                    <p>Se você está vindo pra Piracicaba, a Rua do Porto é... </p>
+                                    <a href="rua-do-porto.html" target="_blank" class="btn-secondary">Saiba mais</a>
+                                </div>
+                          </div>
+                        </li>
+                        <li class="carousel-slide">
+                          <div class="attraction-card">
+                                <img src="images/Cidade/CasaDoPovoador.jpeg" alt="Casa do Povoador">
+                                <div class="card-content">
+                                    <h3>Casa do Povoador</h3>
+                                    <p>Esse edifício é conhecido como “Casa do Povoador”... </p>
+                                    <a href="casa-povoador.html" target="_blank" class="btn-secondary">Saiba mais</a>
+                                </div>
+                          </div>
+                        </li>
+                        <li class="carousel-slide">
+                          <div class="attraction-card">
+                                <img src="images/turismo-negocios.jpg" alt="Engenho Central">
+                                <div class="card-content">
+                                    <h3>Turismo de negócios</h3>
+                                    <p>Ambiente empresarial e inovador... </p>
+                                    <a href="turismo-negocios.html" class="btn-secondary">Saiba mais</a>
+                                </div>
+                          </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="attraction-card">
+                                <img src="images/Cidade/EstacaoPaulista.jpeg" alt="Rua do Porto">
+                                    <div class="card-content">
+                                        <h3>Estação da Paulista</h3>
+                                        <p>Se você está vindo pra Piracicaba, a Estação da Paulista é parada obrigatória... </p>
+                                        <a href="#" class="btn-secondary">Saiba mais</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="attraction-card">
+                                <img src="images/colonia-tirolesa.webp" alt="Casa do Povoador">
+                                <div class="card-content">
+                                    <h3>Colônia Tirolesa de Piracicaba</h3>
+                                    <p>Que tal conhecer um pedacinho de Tirol aqui mesmo no Brasil?</p>
+                                    <a href="colonia-tirolesa.html" class="btn-secondary">Saiba mais</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="attraction-card">
+                                <img src="images/Estacao.jpg" alt="Casa do Povoador">
+                                <div class="card-content">
+                                    <h3>Estação da Paulista</h3>
+                                    <p>Procurando uma estrutura de lazer totalmente gratuita com atividades para toda família?</p>
+                                    <a href="estacao.html" class="btn-secondary">Saiba mais</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="attraction-card">
-                    <img src="images/capela-monte-alegre.jpg" alt="Capela São Pedro">
-                    <div class="card-content">
-                        <h3>Capela São Pedro</h3>
-                        <p>A Capela São Pedro é um edifício religioso, concluído em 1936, apresenta arquitetura em estilo neorromânico, a decoração interna foi executada pelo artista plástico Alfredo Volpi em janeiro.</p>
-                        <a href="#" class="btn-secondary">Saiba mais</a>
-                    </div>
-                </div>
-                <div class="attraction-card">
-                    <img src="images/rua-porto.jpg" alt="Rua do Porto">
-                    <div class="card-content">
-                        <h3>Rua do Porto</h3>
-                        <p>Se você está vindo pra Piracicaba, a Rua do Porto é aquele lugar que você precisa conhecer! É um dos pontos turísticos mais tradicionais da cidade, perfeito pra quem gosta de natureza, boa comida e cultura local.</p>
-                        <a href="#" class="btn-secondary">Saiba mais</a>
-                    </div>
-                </div>
-                <div class="attraction-card">
-                    <img src="images/casa-povoador.png" alt="Museu da Água">
-                    <div class="card-content">
-                        <h3>Casa do povoador</h3>
-                        <p>Esse edifício é conhecido como “Casa do Povoador”, foi construída em Taipa de mão (pau a pique) entre o final do século XVII e início do século XIX. </p>
-                        <a href="#" class="btn-secondary">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-            <div class="section-cta">
-                <a href="#" class="btn">Ver todos os pontos turísticos</a>
+              
+                <button class="carousel-control next" type="button" id="btn-pontos-turisticos-next" aria-label="Próximo">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
-    </section>
+
+        <div class="section-cta">
+              <a href="#" class="btn">Ver todos os pontos turísticos</a>
+        </div>
+</section>
 
     <section class="events-section" id="eventos">
         <div class="container">
@@ -335,9 +399,9 @@
         </div>
     </footer>
 
+    <script src="js/carrossel-pontos-turisticos.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/modal.js"></script>
 
     <div id="modalContainer"></div>
 </body>
