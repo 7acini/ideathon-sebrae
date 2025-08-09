@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piracicaba - Cidade Mais Doce do Brasil - Emergências</title>
     <meta name="description" content="Conheça Piracicaba, a cidade mais doce do Brasil. Rica em cultura, natureza e gastronomia. Venha explorar nossos pontos turísticos e eventos.">
+    <title>Bairro Monte Alegre – Piracicaba</title>
+    <link rel="stylesheet" href="css/emergencia.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logoArredondado.png" type="image/x-icon">
 </head>
 <body>
-    <header class="header">
+    <!-- <header class="header">
         <div class="container">
             <div class="logo">
                 <a href="#">
@@ -38,154 +34,59 @@
                 <i class="fas fa-bars"></i>
             </div>
         </div>
-    </header>
-
+    </header> -->
     <section class="hero" id="home">
          <div class="container">
             <h1>Serviços de Emergência próximos a você!</h1>
                  <div class="grid">
+                    <div class="botao-emergencia hospital" onclick="AbrirMapa('hospitais perto de mim')">
+                        <div class="icone">🏥</div>
+                            <strong>Hospitais</strong><br>
+                            <small>Ver no mapa</small>
+                        </div>
+
+                    <div class="botao-emergencia upa" onclick="AbrirMapa('UPA, Pronto socorro perto de mim')">
+                        <div class="icone">🩺</div>
+                            <strong>UPA / Pronto socorro</strong><br>
+                            <small>Ver no mapa</small>
+                    </div>
+
                     <div class="botao-emergencia bombeiros" onclick="ligar('193')">
                         <div class="icone">🚒</div>
                             <strong>Bombeiros</strong><br>
                             <small>Ligar: 193</small>                        
-                    </div>
-
-                    <div class="botao-emergencia hospital" onclick="abrirMapa('hospitais perto de mim')">
-                    <div class="icone">🏥</div>
-                    <strong>Hospitais</strong><br>
-                    <small>Ver no mapa</small>
-                    </div>
-
-                    <div class="botao-emergencia upa" onclick="abrirMapa('UPA perto de mim')">
-                    <div class="icone">🩺</div>
-                    <strong>UPA</strong><br>
-                    <small>Ver no mapa</small>
-                    </div>
+                        </div>
 
                     <div class="botao-emergencia policia" onclick="ligar('190')">
-                    <div class="icone">🚓</div>
-                    <strong>Polícia</strong><br>
-                    <small>Ligar: 190</small>
+                        <div class="icone">🚓</div>
+                            <strong>Polícia</strong><br>
+                            <small>Ligar: 190</small>
                     </div>
 
                     <div class="botao-emergencia samu" onclick="ligar('192')">
-                    <div class="icone">🚑</div>
-                    <strong>SAMU</strong><br>
-                    <small>Ligar: 192</small>
+                        <div class="icone">🚑</div>
+                            <strong>SAMU</strong><br>
+                            <small>Ligar: 192</small>
                     </div>
 
                     <div class="botao-emergencia defesa-civil" onclick="ligar('199')">
-                    <div class="icone">⚠️</div>
-                    <strong>Defesa Civil</strong><br>
-                    <small>Ligar: 199</small>
-                    </div>
-
-                    <div class="botao-emergencia cvv" onclick="ligar('188')">
-                    <div class="icone">🧠</div>
-                    <strong>CVV (Prevenção ao Suicídio)</strong><br>
-                    <small>Ligar: 188</small>
+                        <div class="icone">⚠️</div>
+                            <strong>Defesa Civil</strong><br>
+                            <small>Ligar: 199</small>
                     </div>
                 </div>
          </div>
-    </section>
 
+    </section>
     
-
-    <section class="contact-section" id="contato">
-        <div class="container">
-            <div class="contact-info">
-                <h2>Entre em Contato</h2>
-                <p>Secretaria Municipal de Turismo de Piracicaba</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Av. Maurice Allain, 454 - Parque do Engenho Central</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>(19) 3403-1234</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>turismo@piracicaba.sp.gov.br</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <p>Segunda a Sexta: 8h às 17h</p>
-                    </div>
-                </div>
-                <div class="social-media">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <input type="text" placeholder="Nome" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="E-mail" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Telefone">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Mensagem" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Enviar Mensagem</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section class="map-section">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117761.809101304!2d-47.6923772!3d-22.7258187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c631a7d7db4f07%3A0xb5a5a5e4a7f6a1b5!2sPiracicaba%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
-    </section>
     <button id="quizBtn" title="Faça o Quiz!" aria-label="Quiz" type="button">
         <img src="images/Capivara-Mascote.jpeg" alt="Capivara Quiz" />
     </button>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <h3>Piracicaba Turismo</h3>
-                    <p>Descubra as belezas e encantos da cidade mais doce do Brasil</p>
-                </div>
-                <div class="footer-links">
-                    <h3>Links Úteis</h3>
-                    <ul>
-                        <li><a href="#">Prefeitura Municipal</a></li>
-                        <li><a href="#">Transporte Público</a></li>
-                        <li><a href="#">Hospedagem</a></li>
-                        <li><a href="#">Restaurantes</a></li>
-                        <li><a href="#">Eventos Culturais</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <p>Receba novidades e promoções sobre Piracicaba</p>
-                    <form>
-                        <input type="email" placeholder="Seu e-mail">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Piracicaba Turismo. Todos os direitos reservados.</p>
-                <div class="footer-credits">
-                    <p>Desenvolvido por <a href="#">Secretaria Municipal de Turismo</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
-    <script src="js/carousel.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/modal.js"></script>
+  <footer class="footer-emergencia" style="margin-top: 2em;">
+    <a href="index.html" class="btn-secondary"><i class="fas fa-arrow-left"></i> Voltar à Home</a>
+    <p>Secretaria de Turismo de Piracicaba</p>
+  </footer>
 
-    <div id="modalContainer"></div>
 </body>
 </html>
